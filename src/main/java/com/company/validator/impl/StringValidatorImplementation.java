@@ -11,7 +11,7 @@ public class StringValidatorImplementation implements StringValidator {
         boolean result=true;
         String buffer []= prs.Parse(str);
         for(String a:buffer){
-            if(a.matches(CHECK_REGX) || buffer.length>2){
+            if(a.matches(CHECK_REGX) || buffer.length!=3){
                 result=false;
             }
         }

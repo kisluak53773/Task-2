@@ -14,9 +14,9 @@ import java.util.stream.Stream;
 
 public class ReadFromFile {
     private final static Logger logger= LogManager.getLogger();
-    public static String[] Read(URI path){
+    public List<String> Read(URI path){
         List<String> lines = new ArrayList<>();
-        List<String> buffer=new ArrayList<>();
+        List<String> result=new ArrayList<>();
         StringValidatorImplementation valid=new StringValidatorImplementation();
         try (Stream<String> lineStream = Files.newBufferedReader(Path.of(path)).lines()) {
             lines = lineStream.collect(Collectors.toList());
@@ -26,12 +26,8 @@ public class ReadFromFile {
         }
         for(int i=0;i<lines.size();i++){
             if(valid.Validate(lines.get(i))){
-               buffer.add(lines.get(i));
+               result.add(lines.get(i));
             }
-        }
-        String []result=new String[buffer.size()];
-        for(int i=0;i<buffer.size();i++){
-            result[i]=buffer.get(i);
         }
         return result;
     };
