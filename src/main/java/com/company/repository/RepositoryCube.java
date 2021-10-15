@@ -10,8 +10,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Repository {
-    private final static Repository REPOSITORY=new Repository();
+public class RepositoryCube {
+    private final static RepositoryCube REPOSITORY_CUBE =new RepositoryCube();
     private static List<Cube> cubes;
 
     public static boolean add(Cube cube){
@@ -36,6 +36,16 @@ public class Repository {
 
     public static void set(int index,Cube newCube){
          cubes.set(index,newCube);
+    }
+
+    public static int getIndex(int id){
+        int index = 0;
+        for(int i=0;i<cubes.size();i++){
+            if(cubes.get(i).getId()==id){
+                index=i;
+            }
+        }
+        return index;
     }
 
     public static void sortById(){
