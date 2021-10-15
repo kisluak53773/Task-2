@@ -15,7 +15,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.List;
 
 public class RepositoryFiller {

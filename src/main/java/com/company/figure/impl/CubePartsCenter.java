@@ -4,7 +4,7 @@ import com.company.figure.Cube;
 import com.company.figure.CubeParts;
 
 public class CubePartsCenter implements CubeParts {
-    int center;
+    private int center;
 
     public CubePartsCenter(){
     }

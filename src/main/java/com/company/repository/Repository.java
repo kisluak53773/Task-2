@@ -1,8 +1,10 @@
 package com.company.repository;
 
 
+import com.company.comparison.CompareCenter;
+import com.company.comparison.CompareId;
+import com.company.comparison.CompareRib;
 import com.company.figure.Cube;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -28,15 +30,30 @@ public class Repository {
         return cubes.remove(cube);
     }
 
-    public Cube get(int index){
+    public static Cube get(int index){
         return cubes.get(index);
     }
 
-    public void set(int index,Cube newCube){
+    public static void set(int index,Cube newCube){
          cubes.set(index,newCube);
     }
 
-    public List<Cube> query(Specification specification){
+    public static void sortById(){
+        CompareId compareId=new CompareId();
+        cubes.sort(compareId);
+    }
+
+    public static void sortByCenter(){
+        CompareCenter compareCenter=new CompareCenter();
+        cubes.sort(compareCenter);
+    }
+
+    public static void sortByRib(){
+        CompareRib compareRib=new CompareRib();
+        cubes.sort(compareRib);
+    }
+
+    public static List<Cube> query(Specification specification){
         List<Cube> list=cubes.stream().filter(o->specification.specify(o)).collect(Collectors.toList());
         return list;
     }

@@ -2,12 +2,15 @@ package com.company.figure.impl;
 
 import com.company.figure.Cube;
 import com.company.figure.CubeParts;
+import com.company.observer.CubeEvent;
+import com.company.observer.impl.CubeObserver;
 
 public class CubeImplementation implements Cube {
-    CubeParts CubeCenter;
-    CubeParts CubeRib;
-    int id;
-    String name;
+    private CubeParts CubeCenter;
+    private CubeParts CubeRib;
+    private int id;
+    private String name;
+    private CubeObserver observer=new CubeObserver();
 
     public CubeImplementation(CubeParts CubeCenter,CubeParts CubeRib,int id,int name){
         this.CubeCenter=CubeCenter;
@@ -30,6 +33,7 @@ public class CubeImplementation implements Cube {
     public int getId() {
         return id;
     }
+
     @Override
     public String getName(){
         return name;
@@ -38,16 +42,19 @@ public class CubeImplementation implements Cube {
     @Override
     public void setCenter(int center){
         this.CubeCenter.setNumber(center);
+        notifyObserver();
     }
 
     @Override
     public void setRib(int rib){
         this.CubeRib.setNumber(rib);
+        notifyObserver();
     }
 
     @Override
     public void setName(String name){
         this.name=name;
+        notifyObserver();
     }
 
     @Override
@@ -78,5 +85,10 @@ public class CubeImplementation implements Cube {
         if((id ==cube.getId()))result=true;
         if((name==cube.getName()))result=true;
         return result;
+    }
+
+    public void notifyObserver(){
+        CubeEvent event=new CubeEvent(this);
+        observer.ParameterChanged(event);
     }
 }

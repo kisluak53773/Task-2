@@ -3,7 +3,7 @@ package com.company.figure.impl;
 import com.company.figure.CubeParts;
 
 public class CubePartsRib implements CubeParts {
-    int rib;
+    private int rib;
 
     public CubePartsRib(){
     }
