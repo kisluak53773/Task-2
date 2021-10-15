@@ -54,7 +54,6 @@ public class CubeImplementation implements Cube {
     @Override
     public void setName(String name){
         this.name=name;
-        notifyObserver();
     }
 
     @Override
