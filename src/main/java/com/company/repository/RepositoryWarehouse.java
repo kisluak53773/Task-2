@@ -1,14 +1,14 @@
 package com.company.repository;
 
-import com.company.figure.Cube;
 import com.company.warehouse.Warehouse;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 public class RepositoryWarehouse {
     private final static RepositoryWarehouse REPOSITORY_WAREHOUSE=new RepositoryWarehouse();
-    private static List<Warehouse> warehouses;
+    private static List<Warehouse> warehouses=new ArrayList<>();
 
     public static boolean add(Warehouse warehouse){
         return warehouses.add(warehouse);

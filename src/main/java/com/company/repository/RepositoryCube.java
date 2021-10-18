@@ -6,13 +6,14 @@ import com.company.comparison.CompareId;
 import com.company.comparison.CompareRib;
 import com.company.figure.Cube;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class RepositoryCube {
     private final static RepositoryCube REPOSITORY_CUBE =new RepositoryCube();
-    private static List<Cube> cubes;
+    private static List<Cube> cubes=new ArrayList<>();
 
     public static boolean add(Cube cube){
         return cubes.add(cube);

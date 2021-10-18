@@ -1,6 +1,6 @@
 package com.company.figure.impl;
 
-import com.company.figure.Cube;
+
 import com.company.figure.CubeParts;
 
 public class CubePartsCenter implements CubeParts {
