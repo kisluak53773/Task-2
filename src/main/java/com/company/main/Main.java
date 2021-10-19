@@ -28,9 +28,9 @@ public class Main {
         int rib=20;
         int id=1;
         filler.Fill(Thread.currentThread().getContextClassLoader().getResource("data/test2.txt").toURI());
-        RepositoryCube.get(0).getCenter().setNumber(10);
-        Warehouse ware=RepositoryWarehouse.get(0);
-        logger.info(ware.getVolume());
+//        RepositoryCube.get(0).getCenter().setNumber(10);
+//        Warehouse ware=RepositoryWarehouse.get(0);
+//        logger.info(ware.getVolume());
 //        Cube buffer=RepositoryCube.get(0);
 //        if(buffer.getCenter().equals(10)){
 //            center=rib/2;

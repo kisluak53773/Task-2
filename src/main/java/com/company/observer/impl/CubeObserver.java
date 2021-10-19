@@ -34,10 +34,11 @@ public class CubeObserver implements Observer {
         }else {
             rib=center*2;
         }
-        RepositoryWarehouse.removeById(indexWarehouse);
-//        Warehouse newWarehouse=warehouseFactory.createWarehouse(id, rib, math.Square(rib),
-//                math.Perimeter(rib));
-//        RepositoryCube.set(indexCube,newCube);
-//        RepositoryWarehouse.set(indexWarehouse,newWarehouse);
+        Cube newCube=cubeFactory.CreateCube(centerFactory.CreateCubePart(center),
+                ribFactory.CreateCubePart(rib),id,id);
+        Warehouse newWarehouse=warehouseFactory.createWarehouse(id, rib, math.Square(rib),
+                math.Perimeter(rib));
+        RepositoryCube.set(indexCube,newCube);
+        RepositoryWarehouse.set(indexWarehouse,newWarehouse);
     }
 }
