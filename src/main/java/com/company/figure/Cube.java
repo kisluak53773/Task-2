@@ -71,12 +71,12 @@ public class Cube {
 
     @Override
     public boolean equals(Object obj) {
-        boolean result=false;
+        boolean result=true;
         Cube cube=(Cube) obj;
-        if(CubeCenter.equals(cube.getCenter().getNumber()))result=true;
-        if(CubeRib.equals(cube.getRib().getNumber()))result=true;
-        if((id ==cube.getId()))result=true;
-        if((name==cube.getName()))result=true;
+        if(!CubeCenter.equals(cube.getCenter().getNumber()))result=false;
+        if(!CubeRib.equals(cube.getRib().getNumber()))result=false;
+        if(!(id ==cube.getId()))result=false;
+        if(!(name==cube.getName()))result=false;
         return result;
     }
 

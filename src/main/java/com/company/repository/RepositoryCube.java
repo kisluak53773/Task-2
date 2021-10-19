@@ -31,6 +31,10 @@ public class RepositoryCube {
         return cubes.remove(cube);
     }
 
+    public static void removeById(int id){
+        cubes.remove(id);
+    }
+
     public static Cube get(int index){
         return cubes.get(index);
     }

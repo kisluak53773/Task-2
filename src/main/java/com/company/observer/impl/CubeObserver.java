@@ -19,26 +19,25 @@ public class CubeObserver implements Observer {
     public void ParameterChanged(CubeEvent event) {
         Cube cube=event.getSource();
         WarehouseFactory warehouseFactory=new WarehouseFactory();
-        CubeFactory cubeFactory=new CubeFactoryImplementation();
         MathWithFigureImplementation math=new MathWithFigureImplementation();
         CubePartsFactory centerFactory=new CubeCenterPartsFactory();
         CubePartsFactory ribFactory=new CubeRibPartsFactory();
+        CubeFactory cubeFactory=new CubeFactoryImplementation();
         int id= cube.getId();
         int indexWarehouse= RepositoryWarehouse.getIndex(id);
         int indexCube= RepositoryCube.getIndex(id);
         Cube buffer=RepositoryCube.get(indexCube);
         int rib=cube.getRib().getNumber();
         int center=cube.getCenter().getNumber();
-        if(buffer.getCenter().equals(cube.getCenter().getNumber())){
+        if(buffer.getCenter().equals(center)){
             center=rib/2;
         }else {
             rib=center*2;
         }
-        Cube newCube=cubeFactory.CreateCube(centerFactory.CreateCubePart(center),
-                ribFactory.CreateCubePart(rib),id,id);
-        Warehouse newWarehouse=warehouseFactory.createWarehouse(id, math.Volume(rib), math.Square(rib),
-                math.Perimeter(rib));
-        RepositoryCube.set(indexCube,newCube);
-        RepositoryWarehouse.set(indexWarehouse,newWarehouse);
+        RepositoryWarehouse.removeById(indexWarehouse);
+//        Warehouse newWarehouse=warehouseFactory.createWarehouse(id, rib, math.Square(rib),
+//                math.Perimeter(rib));
+//        RepositoryCube.set(indexCube,newCube);
+//        RepositoryWarehouse.set(indexWarehouse,newWarehouse);
     }
 }

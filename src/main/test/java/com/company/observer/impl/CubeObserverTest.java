@@ -1,5 +1,6 @@
 package com.company.observer.impl;
 
+import com.company.action.impl.MathWithFigureImplementation;
 import com.company.factory.CubeFactory;
 import com.company.factory.CubePartsFactory;
 import com.company.factory.impl.CubeCenterPartsFactory;
@@ -34,10 +35,11 @@ public class CubeObserverTest {
     @Test
     public void testParameterChanged2() throws URISyntaxException {
         RepositoryFiller filler=new RepositoryFiller();
+        MathWithFigureImplementation math=new MathWithFigureImplementation();
         filler.Fill(Thread.currentThread().getContextClassLoader().getResource("data/test2.txt").toURI());
         RepositoryCube.get(0).getCenter().setNumber(10);
         Warehouse actual= RepositoryWarehouse.get(0);
-        Warehouse expected=new Warehouse(1,8000,2400,240);
+        Warehouse expected=new Warehouse(1, 8000, 2400, 240);
         assertEquals(actual,expected);
     }
 

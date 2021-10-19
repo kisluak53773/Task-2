@@ -22,6 +22,10 @@ public class RepositoryWarehouse {
         return warehouses.removeAll(warehouseCollection);
     }
 
+    public static void removeById(int id){
+        warehouses.remove(id);
+    }
+
     public static boolean Remove(Warehouse warehouse){
         return warehouses.remove(warehouse);
     }
