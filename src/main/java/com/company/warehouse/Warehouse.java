@@ -44,4 +44,15 @@ public class Warehouse {
     public void setPerimeter(int perimeter) {
         this.perimeter = perimeter;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Warehouse ware=(Warehouse) obj;
+        boolean result=true;
+        if(Integer.compare(ware.getId(), id)!=0)result=false;
+        if(Integer.compare(ware.getVolume(),volume)!=0)result=false;
+        if(Integer.compare(ware.getSquare(),square)!=0)result=false;
+        if(Integer.compare(ware.getPerimeter(),perimeter)!=0)result=false;
+        return result;
+    }
 }

@@ -24,19 +24,11 @@ public class Main {
         CubePartsFactory centerFactory=new CubeCenterPartsFactory();
         CubePartsFactory ribFactory=new CubeRibPartsFactory();
         CubeFactory cubeFactory=new CubeFactoryImplementation();
-        int center=10;
-        int rib=20;
-        int id=1;
         filler.Fill(Thread.currentThread().getContextClassLoader().getResource("data/test2.txt").toURI());
-//        RepositoryCube.get(0).getCenter().setNumber(10);
-//        Warehouse ware=RepositoryWarehouse.get(0);
-//        logger.info(ware.getVolume());
-//        Cube buffer=RepositoryCube.get(0);
-//        if(buffer.getCenter().equals(10)){
-//            center=rib/2;
-//        }else {
-//            rib=center*2;
-//        }
-//        logger.info(rib);
+        RepositoryCube.get(0).setCenter(10);
+        Cube expected1=cubeFactory.CreateCube(centerFactory.CreateCubePart(10),
+                ribFactory.CreateCubePart(20),1,1);
+        RepositoryCube.get(0).equals(expected1);
+        logger.info(expected1.getName().equals(RepositoryCube.get(0).getName()));
     }
 }

@@ -71,16 +71,16 @@ public class Cube {
 
     @Override
     public boolean equals(Object obj) {
-        boolean result=true;
-        Cube cube=(Cube) obj;
-        if(!CubeCenter.equals(cube.getCenter().getNumber()))result=false;
-        if(!CubeRib.equals(cube.getRib().getNumber()))result=false;
-        if(!(id ==cube.getId()))result=false;
-        if(!(name==cube.getName()))result=false;
+        boolean result = true;
+        Cube cube = (Cube) obj;
+        if (!CubeCenter.equals(cube.getCenter().getNumber())) result = false;
+        if(!CubeRib.equals(cube.getRib().getNumber())) result=false;
+        if(!(id ==cube.getId())) result=false;
+        if(!(name.equals(cube.getName()))) result=false;
         return result;
     }
 
-    public void notifyObserver(){
+    private void notifyObserver(){
         CubeEvent event=new CubeEvent(this);
         observer.ParameterChanged(event);
     }

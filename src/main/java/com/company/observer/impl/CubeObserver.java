@@ -13,8 +13,12 @@ import com.company.observer.Observer;
 import com.company.repository.RepositoryCube;
 import com.company.repository.RepositoryWarehouse;
 import com.company.warehouse.Warehouse;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class CubeObserver implements Observer {
+    private final static Logger logger= LogManager.getLogger();
+
     @Override
     public void ParameterChanged(CubeEvent event) {
         Cube cube=event.getSource();
@@ -30,13 +34,13 @@ public class CubeObserver implements Observer {
         int rib=cube.getRib().getNumber();
         int center=cube.getCenter().getNumber();
         if(buffer.getCenter().equals(center)){
-            center=rib/2;
-        }else {
             rib=center*2;
+        }else {
+            center=rib/2;
         }
         Cube newCube=cubeFactory.CreateCube(centerFactory.CreateCubePart(center),
                 ribFactory.CreateCubePart(rib),id,id);
-        Warehouse newWarehouse=warehouseFactory.createWarehouse(id, rib, math.Square(rib),
+        Warehouse newWarehouse=warehouseFactory.createWarehouse(id, math.Volume(rib), math.Square(rib),
                 math.Perimeter(rib));
         RepositoryCube.set(indexCube,newCube);
         RepositoryWarehouse.set(indexWarehouse,newWarehouse);

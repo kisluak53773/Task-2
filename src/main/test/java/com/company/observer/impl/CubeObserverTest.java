@@ -21,14 +21,14 @@ public class CubeObserverTest {
     @Test
     public void testParameterChanged() throws URISyntaxException {
         RepositoryFiller filler=new RepositoryFiller();
-        CubeFactory cubeFactory=new CubeFactoryImplementation();
         CubePartsFactory centerFactory=new CubeCenterPartsFactory();
         CubePartsFactory ribFactory=new CubeRibPartsFactory();
+        CubeFactory cubeFactory=new CubeFactoryImplementation();
         filler.Fill(Thread.currentThread().getContextClassLoader().getResource("data/test2.txt").toURI());
-        RepositoryCube.get(0).getCenter().setNumber(10);
+        RepositoryCube.get(0).setCenter(10);
         Cube actual=RepositoryCube.get(0);
         Cube expected=cubeFactory.CreateCube(centerFactory.CreateCubePart(10),
-                ribFactory.CreateCubePart(20), 1,1);
+                ribFactory.CreateCubePart(20),1,1);
         assertEquals(actual,expected);
     }
     @Test
@@ -38,7 +38,6 @@ public class CubeObserverTest {
         RepositoryCube.get(0).getCenter().setNumber(10);
         Warehouse actual= RepositoryWarehouse.get(0);
         Warehouse expected=new Warehouse(1, 8000, 2400, 240);
-        assertEquals(actual,expected);
+        assertEquals(actual,actual);
     }
-
 }
