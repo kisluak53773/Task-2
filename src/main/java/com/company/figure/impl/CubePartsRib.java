@@ -31,15 +31,17 @@ public class CubePartsRib implements CubeParts {
 
     @Override
     public int hashCode() {
-        int hash=7;
-        hash=hash*31+rib;
+        int hash=12;
+        hash*=rib;
         return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
         boolean result=true;
-        if(Integer.compare(Integer.valueOf((Integer) obj),rib)!=0) result=false;
+        if(obj!=null) {
+            if (Integer.compare(Integer.valueOf((Integer) obj), rib) != 0) result = false;
+        }else result=false;
         return result;
     }
 

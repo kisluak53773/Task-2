@@ -63,20 +63,22 @@ public class Cube {
 
     @Override
     public int hashCode() {
-        int hash=7;
-        hash=hash*31+CubeCenter.hashCode();
-        hash=hash*31+CubeRib.hashCode();
+        int hash=12;
+        hash*=CubeCenter.hashCode();
+        hash*=CubeRib.hashCode();
         return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
         boolean result = true;
-        Cube cube = (Cube) obj;
-        if (!CubeCenter.equals(cube.getCenter().getNumber())) result = false;
-        if(!CubeRib.equals(cube.getRib().getNumber())) result=false;
-        if(!(id ==cube.getId())) result=false;
-        if(!(name.equals(cube.getName()))) result=false;
+        if(obj!=null) {
+            Cube cube = (Cube) obj;
+            if (!CubeCenter.equals(cube.getCenter().getNumber())) result = false;
+            if (!CubeRib.equals(cube.getRib().getNumber())) result = false;
+            if (!(id == cube.getId())) result = false;
+            if (!(name.equals(cube.getName()))) result = false;
+        }else result=false;
         return result;
     }
 
