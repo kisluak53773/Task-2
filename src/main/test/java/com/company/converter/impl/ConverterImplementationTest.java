@@ -1,6 +1,6 @@
 package com.company.converter.impl;
 
-import com.company.customexception.WrongDigitsException;
+import com.company.exception.WrongDigitsException;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;

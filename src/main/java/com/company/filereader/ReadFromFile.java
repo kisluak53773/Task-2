@@ -21,8 +21,7 @@ public class ReadFromFile {
         try (Stream<String> lineStream = Files.newBufferedReader(Path.of(path)).lines()) {
             lines = lineStream.collect(Collectors.toList());
         }catch (IOException e){
-            logger.error(e.getMessage());
-            e.printStackTrace();
+            logger.error("IO Exception");
         }
         for(int i=0;i<lines.size();i++){
             if(valid.Validate(lines.get(i))){

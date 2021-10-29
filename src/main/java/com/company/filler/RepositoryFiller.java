@@ -2,7 +2,7 @@ package com.company.filler;
 
 import com.company.action.impl.MathWithFigureImplementation;
 import com.company.converter.impl.ConverterImplementation;
-import com.company.customexception.WrongDigitsException;
+import com.company.exception.WrongDigitsException;
 import com.company.factory.CubeFactory;
 import com.company.factory.CubePartsFactory;
 import com.company.factory.WarehouseFactory;
@@ -11,8 +11,6 @@ import com.company.factory.impl.CubeFactoryImplementation;
 import com.company.factory.impl.CubeRibPartsFactory;
 import com.company.figure.CubeParts;
 import com.company.figure.Cube;
-import com.company.figure.impl.CubePartsCenter;
-import com.company.figure.impl.CubePartsRib;
 import com.company.filereader.ReadFromFile;
 import com.company.repository.RepositoryCube;
 import com.company.repository.RepositoryWarehouse;
@@ -47,8 +45,7 @@ public class RepositoryFiller {
                 RepositoryWarehouse.add(warehouse);
             }
         } catch (WrongDigitsException e) {
-            logger.error(e.getMessage());
-            e.printStackTrace();
+            logger.error("Wrong digits");
         }
     }
 }

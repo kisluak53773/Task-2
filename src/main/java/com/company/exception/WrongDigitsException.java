@@ -1,4 +1,4 @@
-package com.company.customexception;
+package com.company.exception;
 
 public class WrongDigitsException extends Exception{
 

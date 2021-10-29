@@ -1,7 +1,7 @@
 package com.company.converter.impl;
 
 import com.company.converter.Converter;
-import com.company.customexception.WrongDigitsException;
+import com.company.exception.WrongDigitsException;
 import com.company.parser.impl.ParserImplementation;
 import com.company.validator.impl.DigitsValidatorImplementation;
 
