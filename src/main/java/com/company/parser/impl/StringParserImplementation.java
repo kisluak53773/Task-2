@@ -1,8 +1,8 @@
 package com.company.parser.impl;
 
-import com.company.parser.Parser;
+import com.company.parser.StringParser;
 
-public class ParserImplementation implements Parser {
+public class StringParserImplementation implements StringParser {
     @Override
     public String[] Parse(String str) {
         final String DELIMITER_REGEX="\\s+";

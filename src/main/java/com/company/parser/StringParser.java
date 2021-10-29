@@ -1,5 +1,5 @@
 package com.company.parser;
 
-public interface Parser {
+public interface StringParser {
     String [] Parse(String str);
 }
