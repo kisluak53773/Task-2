@@ -1,5 +1,5 @@
 package com.company.shape.validator;
 
 public interface DigitsValidator {
-    boolean Validate(Integer a,Integer b);
+    boolean validate(Integer a,Integer b);
 }

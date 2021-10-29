@@ -1,7 +1,6 @@
 package com.company.shape.filereader;
 
 import com.company.shape.validator.impl.StringValidatorImplementation;
-import com.company.validator.impl.StringValidatorImplementation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,7 +24,7 @@ public class ReadFromFile {
             logger.error("IO Exception");
         }
         for(int i=0;i<lines.size();i++){
-            if(valid.Validate(lines.get(i))){
+            if(valid.validate(lines.get(i))){
                result.add(lines.get(i));
             }
         }

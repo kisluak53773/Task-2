@@ -1,5 +1,5 @@
 package com.company.shape.parser;
 
 public interface StringParser {
-    String [] Parse(String str);
+    String [] parse(String str);
 }

@@ -24,7 +24,7 @@ import java.util.List;
 public class RepositoryFiller {
     private final static Logger logger= LogManager.getLogger();
 
-    public void Fill(URI path){
+    public void fill(URI path){
         ConverterImplementation converter=new ConverterImplementation();
         ReadFromFile reader=new ReadFromFile();
         CubeFactory cubeFactory=new CubeFactoryImplementation();
@@ -35,10 +35,10 @@ public class RepositoryFiller {
         try {
             List<String> buffer=reader.Read(path);
             for(int i=0;i<buffer.size();i++) {
-                int[] nums = converter.Convert(buffer.get(i));
-                CubeParts rib = ribFactory.CreateCubePart(nums[0]);
-                CubeParts center = centerFactory.CreateCubePart(nums[1]);
-                Cube cube = cubeFactory.CreateCube(center,rib,nums[2],nums[2]);
+                int[] nums = converter.convert(buffer.get(i));
+                CubeParts rib = ribFactory.createCubePart(nums[0]);
+                CubeParts center = centerFactory.createCubePart(nums[1]);
+                Cube cube = cubeFactory.createCube(center,rib,nums[2],nums[2]);
                 RepositoryCube.add(cube);
                 Warehouse warehouse=warehouseFactory.createWarehouse(nums[2], math.Volume(nums[0]),
                         math.Square(nums[0]),math.Perimeter(nums[0]));

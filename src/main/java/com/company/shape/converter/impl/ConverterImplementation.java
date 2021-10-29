@@ -9,15 +9,15 @@ import java.util.ArrayList;
 
 public class ConverterImplementation implements Converter {
     @Override
-    public int[] Convert(String str) throws WrongDigitsException {
+    public int[] convert(String str) throws WrongDigitsException {
         DigitsValidatorImplementation valid=new DigitsValidatorImplementation();
         StringParserImplementation prs=new StringParserImplementation();
-        String []buffer=prs.Parse(str);
+        String []buffer=prs.parse(str);
         ArrayList<Integer>ints=new ArrayList<>();
         for (String a:buffer){
             ints.add(Integer.parseInt(a));
         }
-        if(!valid.Validate(ints.get(0),ints.get(1))){
+        if(!valid.validate(ints.get(0),ints.get(1))){
             throw new WrongDigitsException();
         }
         int result[]=new int[ints.size()];

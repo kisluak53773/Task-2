@@ -20,10 +20,10 @@ public class Main {
         CubePartsFactory centerFactory=new CubeCenterPartsFactory();
         CubePartsFactory ribFactory=new CubeRibPartsFactory();
         CubeFactory cubeFactory=new CubeFactoryImplementation();
-        filler.Fill(Thread.currentThread().getContextClassLoader().getResource("data/test2.txt").toURI());
+        filler.fill(Thread.currentThread().getContextClassLoader().getResource("data/test2.txt").toURI());
         RepositoryCube.get(0).setCenter(10);
-        Cube expected1=cubeFactory.CreateCube(centerFactory.CreateCubePart(10),
-                ribFactory.CreateCubePart(20),1,1);
+        Cube expected1=cubeFactory.createCube(centerFactory.createCubePart(10),
+                ribFactory.createCubePart(20),1,1);
         RepositoryCube.get(0).equals(expected1);
         logger.info(expected1.getName().equals(RepositoryCube.get(0).getName()));
     }

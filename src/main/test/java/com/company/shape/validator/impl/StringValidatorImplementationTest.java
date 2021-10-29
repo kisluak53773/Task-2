@@ -10,7 +10,7 @@ public class StringValidatorImplementationTest {
     public void testValidate() {
         StringValidatorImplementation valid=new StringValidatorImplementation();
         String str="18 9";
-        boolean actual=valid.Validate(str);
+        boolean actual=valid.validate(str);
         boolean expected=true;
         assertEquals(actual,expected);
     }

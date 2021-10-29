@@ -21,10 +21,10 @@ public class RepositoryFillerTest {
         CubeFactory cubeFactory=new CubeFactoryImplementation();
         CubePartsFactory centerFactory=new CubeCenterPartsFactory();
         CubePartsFactory ribFactory=new CubeRibPartsFactory();
-        filler.Fill(Thread.currentThread().getContextClassLoader().getResource("data/test2.txt").toURI());
+        filler.fill(Thread.currentThread().getContextClassLoader().getResource("data/test2.txt").toURI());
         Cube actual= RepositoryCube.get(0);
-        Cube expected=cubeFactory.CreateCube(centerFactory.CreateCubePart(9),
-                ribFactory.CreateCubePart(18), 1,1);
+        Cube expected=cubeFactory.createCube(centerFactory.createCubePart(9),
+                ribFactory.createCubePart(18), 1,1);
         assertEquals(actual,expected);
     }
 }

@@ -1,7 +1,7 @@
 package com.company.shape.figure.impl;
 
 
-import com.company.figure.CubeParts;
+import com.company.shape.figure.CubeParts;
 
 public class CubePartsCenter implements CubeParts {
     private int center;

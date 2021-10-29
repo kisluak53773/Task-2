@@ -82,6 +82,6 @@ public class Cube {
 
     private void notifyObserver(){
         CubeEvent event=new CubeEvent(this);
-        observer.ParameterChanged(event);
+        observer.parameterChanged(event);
     }
 }

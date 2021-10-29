@@ -6,7 +6,7 @@ import com.company.shape.figure.impl.CubePartsRib;
 
 public class CubeRibPartsFactory implements CubePartsFactory {
     @Override
-    public CubeParts CreateCubePart(int a) {
+    public CubeParts createCubePart(int a) {
         return new CubePartsRib(a);
     }
 }

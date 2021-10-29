@@ -8,7 +8,7 @@ public class CubeFactoryImplementation implements CubeFactory {
 
 
     @Override
-    public Cube CreateCube(CubeParts center, CubeParts rib, int id, int name) {
+    public Cube createCube(CubeParts center, CubeParts rib, int id, int name) {
         return new Cube(center,rib,id,name);
     }
 }

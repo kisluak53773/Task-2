@@ -1,6 +1,6 @@
 package com.company.shape.figure.impl;
 
-import com.company.figure.CubeParts;
+import com.company.shape.figure.CubeParts;
 import com.company.shape.figure.CubeParts;
 
 public class CubePartsRib implements CubeParts {

@@ -20,7 +20,7 @@ public class CubeObserver implements Observer {
     private final static Logger logger= LogManager.getLogger();
 
     @Override
-    public void ParameterChanged(CubeEvent event) {
+    public void parameterChanged(CubeEvent event) {
         Cube cube=event.getSource();
         WarehouseFactory warehouseFactory=new WarehouseFactory();
         MathWithFigureImplementation math=new MathWithFigureImplementation();
@@ -38,8 +38,8 @@ public class CubeObserver implements Observer {
         }else {
             center=rib/2;
         }
-        Cube newCube=cubeFactory.CreateCube(centerFactory.CreateCubePart(center),
-                ribFactory.CreateCubePart(rib),id,id);
+        Cube newCube=cubeFactory.createCube(centerFactory.createCubePart(center),
+                ribFactory.createCubePart(rib),id,id);
         Warehouse newWarehouse=warehouseFactory.createWarehouse(id, math.Volume(rib), math.Square(rib),
                 math.Perimeter(rib));
         RepositoryCube.set(indexCube,newCube);
