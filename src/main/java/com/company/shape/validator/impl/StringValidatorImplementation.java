@@ -4,9 +4,9 @@ import com.company.shape.parser.impl.StringParserImplementation;
 import com.company.shape.validator.StringValidator;
 
 public class StringValidatorImplementation implements StringValidator {
+    static final String CHECK_REGX="\\d+[a-z]+";
     @Override
     public boolean validate(String str) {
-        final String CHECK_REGX="\\d+[a-z]+";
         StringParserImplementation prs=new StringParserImplementation();
         boolean result=true;
         String buffer []= prs.parse(str);
